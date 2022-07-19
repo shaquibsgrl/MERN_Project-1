@@ -1,4 +1,5 @@
 const express=require("express");
+require("dotenv").config()
 
 const connect=require("./configs/db");
 
@@ -11,7 +12,7 @@ app.use(express.json())
 
 app.use("/products",userController)
 
-app.listen(5000,async()=>{
+app.listen(process.env.PORT || 5000,async()=>{
     
     try {
        await connect();
