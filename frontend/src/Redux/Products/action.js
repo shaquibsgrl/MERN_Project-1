@@ -12,7 +12,7 @@ const handleSuccess=(payload)=>({
 
  const getData=()=>(dispatch)=>{
     dispatch(handleLoading())
-    fetch("https://mernakjsdsskdj.herokuapp.com/products")
+    fetch("https://mernprojectxyz.herokuapp.com/products")
       .then((res) => res.json())
       .then((res) => dispatch(handleSuccess(res.products)))
       .catch(() => dispatch(handleError()));
@@ -34,7 +34,7 @@ const handleCurrentProductSuccess=(payload)=>({
 
  const getCurrentProductData=(_id)=>(dispatch)=>{
     dispatch(handleCurrentProductLoading())
-    fetch(`https://mernakjsdsskdj.herokuapp.com/products/${_id}`)
+    fetch(`https://mernprojectxyz.herokuapp.com/products/${_id}`)
       .then((res) => res.json())
       //.then((res)=>console.log(res))
       .then((res) => dispatch(handleCurrentProductSuccess(res.product)))
